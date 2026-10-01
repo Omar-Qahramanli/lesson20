@@ -1,22 +1,21 @@
+const questions = document.querySelectorAll(".faq-question");
 
-        const questions = document.querySelectorAll(".faq-question");
+ questions.forEach(function(question) {
 
-        questions.forEach(function(question) {
+    question.addEventListener("click", function() {
 
-            question.addEventListener("click", function() {
+    const item = question.parentElement;
+        const icon = question.querySelector(".icon");
 
-                const item = question.parentElement;
-                const icon = question.querySelector(".icon");
+    item.classList.toggle("active");
 
-                item.classList.toggle("active");
+    if (item.classList.contains("active")) {
+        icon.textContent = "−";
+    } else {
+            icon.textContent = "+";
+        }
 
-                if (item.classList.contains("active")) {
-                    icon.textContent = "−";
-                } else {
-                    icon.textContent = "+";
-                }
+     });
 
-            });
-
-        });
+      });
    
